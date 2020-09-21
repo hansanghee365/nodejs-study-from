@@ -32,7 +32,8 @@ server.get("/about", (req, res) => {
 //   res.send(req.body.user_id);
 // });
 
-server.listen(3000, (err) => {
+server.listen(process.env.PORT || 3000, (err) => {
   if (err) return console.log(err);
-  console.log("The server is listening on port 3000");
+  console.log(process.env.PORT);
+  console.log("The server is listening on port 5000");
 });
