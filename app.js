@@ -18,6 +18,8 @@ server.post("/login/", (req, res) => {
   res.send("Received POST Data!");
   var user_id = req.body.user_id;
   fs.writeFileSync("./hello.json", JSON.stringify(req.body, null, 2));
+  var data = JSON.parse(fs.readFileSync("./hello.json", { encoding: "utf-8" }));
+  console.log(data.user_id);
 });
 
 server.get("/about", (req, res) => {
